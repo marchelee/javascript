@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,15 @@
 
 <body onload="startTime()">
   <div class="clock">
-    <div class="clock-text" id="clock-text"> </div>
-    
-    <button btn-start>Start</button>
-    <button btn-start>Lap</button>
-    <button btn-start>Stop</button>
-    <button btn-start>Restart</button>
-    <button btn-start>Clear Lap</button>
+    <div class="clock-text" id="clock-text"></div>
+    <button onClick="startTimer()">Start</button>
+    <button onClick="pauseTimer()">Pause</button>
+    <button onClick="stopTimer()">Stop</button>
+    <button onClick="restartTimer()">Restart</button>
+    <button onClick="startLapTimer()">Start Lap</button>
+    <button onClick="clearLapTimer()">Clear Lap</button>
+    <div class="stopwatch"></div>
+    <ul class="laps"></ul>
   </div>
 </body>
 
