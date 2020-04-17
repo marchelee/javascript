@@ -4,7 +4,6 @@ var timer
 var stopwatchElement = document.querySelector('.stopwatch')
 var lapsContainer = document.querySelector('.laps')
 
-console.log(timer)
 function startTimer() {
   if (!timer) {
     timer = setInterval(run, 10)
