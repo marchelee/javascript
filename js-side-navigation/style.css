@@ -1,0 +1,46 @@
+.sideNav {
+  height: 100%; /*full height*/
+  width: 0; /*change using js*/
+  position: fixed; /*stay in place*/
+  z-index: 1; /*stay on the top*/
+  top: 0; /*stay at the top*/
+  left: 0;
+  background-color: black;
+  overflow-x: hidden; /*disable horizontal scrolling*/
+  padding-top: 60px; /*place the content 60px from the top*/
+  transition: 0.5s; /*transition effect to the slide in the sidenav*/
+}
+
+.sideNav a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  padding: 8px 8px 8px 32px;
+  transition: 0.5s;
+}
+
+.sideNav a:hover {
+  color: orange;
+}
+
+.sideNav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 45px;
+  /*margin-left: 50px;*/
+} 
+
+/*push content to the right*/
+.main {
+  transition:  0.5s;
+  padding: 20px;
+}
+
+.btn-toggle {
+  border-radius: 2.5px;
+  font-size: 15px;
+  background-color: orange;
+  border: 0;
+}
