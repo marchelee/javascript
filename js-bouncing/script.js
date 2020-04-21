@@ -12,8 +12,8 @@ var context = canvas.getContext("2d")
 setInterval(update, 1000 / fps)
 
 //Ball starting position
-ballX = Math.floor(Math.random() * canvas.height, 100)
-ballY = Math.floor(Math.random() * canvas.width, 100)
+ballX = Math.round(Math.random() * canvas.height)
+ballY = Math.round(Math.random() * canvas.width)
 
 console.log(ballX)
 console.log(ballY)
