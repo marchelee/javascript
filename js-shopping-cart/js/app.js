@@ -19,7 +19,7 @@
       price: 25
     },
     "101004": {
-      productName: "Fork, Knife and Spoon set",
+      productName: "Cutlery Set",
       price: 15
     },
     "101005": {
@@ -32,6 +32,7 @@
 
   var menuArea = document.getElementById("menu-area");
   var cartList = document.getElementById("cart-list");
+  var totalAmount = document.getElementById("total-amount");
 
   var setMenu = function () {
     for (var sku in menuData) {
@@ -78,14 +79,35 @@
     setCart();
   };
 
+  var reduceCartCount = function (event) {
+    var button = event.target;
+    var sku = button.getAttribute('data-sku');
+
+    if (sku in cartData) {
+      cartData[sku] -= 1;
+
+      if (cartData[sku] < 1) delete cartData[sku];
+    }
+
+    setCart();
+  }
+
   var setCart = function () {
+    var total = 0;
 
     cartList.innerHTML = "";
 
     for (var sku in cartData) {
       var cartItem = createCartItem(sku);
+      var price = menuData[sku].price;
+      var qty = cartData[sku];
+
+      total += qty * price;
+      console.log(total);
       cartList.appendChild(cartItem);
     }
+
+    totalAmount.innerText = total;
   };
 
   var createCartItem = function (sku) {
@@ -107,6 +129,7 @@
     itemRemoveButton.className = "remove-button";
     itemRemoveButton.innerText = "-";
     itemRemoveButton.setAttribute("data-sku", sku);
+    itemRemoveButton.onclick = reduceCartCount;
 
     cartItem.appendChild(itemText);
     cartItem.appendChild(itemTotal);
