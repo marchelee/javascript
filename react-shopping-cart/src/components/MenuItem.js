@@ -1,11 +1,11 @@
 import React from 'react';
 
-function MenuItem() {
+function MenuItem(props) {
   return (
-    <div class="menu-item">
-      <span class="menu-text">Mouse - $199</span>
-      <span class="menu-action">
-        <button>+</button>
+    <div className="menu-item">
+      <span className="menu-text">{props.productName} - ${props.price}</span>
+      <span className="menu-action">
+        <button onClick={() => props.addToCart(props.sku)}>+</button>
       </span>
     </div>
   );

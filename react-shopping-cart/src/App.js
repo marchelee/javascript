@@ -1,14 +1,16 @@
 import React from 'react';
 
-import MenuItem from './components/MenuItem';
+import MenuCart from './containers/MenuCart'
 
 import './css/reset.css';
 import './css/style.css';
 
 function App() {
   return (
-    <div>
-      
+    <div className="container">
+      <div id="app-holder">
+        <MenuCart />
+      </div>
     </div>
   );
 }
